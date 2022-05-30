@@ -19,7 +19,6 @@ apply plugin: 'io.spring.dependency-management'    // 스프링 부트의 의존
 
 group 'com.springboot.study'
 version '1.0-SNAPSHOT'
-sourceCompatibility = 1.8
 
 // 각종 의존성(라이브러리)들을 어떤 원격 저장소에 받을지 정함
 // mavenCenteral을 많이 사용하지만, 라이브러리 업로그 난이도 때문에 jcenter도 많이 사용함
@@ -30,5 +29,6 @@ repositories {
 // 프로젝트 개발에 필요한 의존성들을 선언하는 곳
 dependencies {
     implementation('org.springframework.boot:spring-boot-starter-web')
+    implementation('org.projectlombok:lombok')
     testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
