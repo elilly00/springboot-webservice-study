@@ -1,15 +1,19 @@
 package com.springboot.study.book.domain.posts;
 
+import com.fasterxml.jackson.databind.ser.Serializers;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 import javax.persistence.*;
 
 @Getter // 클래스 내 모든 필드의 Getter 메소드를 자동 생성하는 어노테이션
 @NoArgsConstructor  // 기본 생성자 자동 추가 어노테이션 = public Posts(){}
 @Entity // 테이블과 링크될 클래스임을 나타내는 어노테이션
-public class Posts {
+public class Posts extends BaseTimeEntity {
 
     @Id // 해당 테이블의 PK 필드를 나타내는 어노테이션
     @GeneratedValue(strategy = GenerationType.IDENTITY) 
