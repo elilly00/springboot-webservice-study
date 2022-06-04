@@ -1,5 +1,6 @@
 package com.springboot.study.book.web;
 
+import com.springboot.study.book.config.auth.LoginUser;
 import com.springboot.study.book.config.auth.dto.SessionUser;
 import com.springboot.study.book.domain.posts.PostsRepository;
 import com.springboot.study.book.service.posts.PostsService;
@@ -20,11 +21,10 @@ public class IndexController {
     private final HttpSession httpSession;
 
     @GetMapping("/")
-    public String index(Model model) {
+    public String index(Model model, @LoginUser SessionUser user) {
         // Model : 서버 템블릿 엔진에서 사용할 수 있는 객체 저장 가능
         //         postsService.findAllDesc()로 가져온 결과는 posts로 index.mustache에 전달한다.
         model.addAttribute("posts", postsService.findAllDesc());
-        SessionUser user = (SessionUser) httpSession.getAttribute("user");
 
         if(user != null) {
             model.addAttribute("userName", user.getName());
