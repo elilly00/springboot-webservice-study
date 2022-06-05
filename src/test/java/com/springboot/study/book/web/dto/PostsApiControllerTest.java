@@ -27,14 +27,14 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)  // 랜덤포트실행
 public class PostsApiControllerTest {
 
     @LocalServerPort
     private int port;
 
     @Autowired
-    private TestRestTemplate restTemplate;
+    private TestRestTemplate restTemplate;  // HTTP를 사용하여 통신하는 범용 라이브러리
 
     @Autowired
     private PostsRepository postsRepository;
