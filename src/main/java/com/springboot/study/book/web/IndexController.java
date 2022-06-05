@@ -26,7 +26,7 @@ public class IndexController {
         //         postsService.findAllDesc()로 가져온 결과는 posts로 index.mustache에 전달한다.
         model.addAttribute("posts", postsService.findAllDesc());
 
-        if(user != null) {
+        if (user != null) {
             model.addAttribute("userName", user.getName());
         }
 

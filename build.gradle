@@ -18,7 +18,8 @@ apply plugin: 'org.springframework.boot'            // 자바와 스프링 부�
 apply plugin: 'io.spring.dependency-management'    // 스프링 부트의 의존성을 관리해주는 필수 플러그인
 
 group 'com.springboot.study'
-version '1.0-SNAPSHOT'
+version '1.0.4-SNAPSHOT'
+sourceCompatibility = 1.8
 
 // 각종 의존성(라이브러리)들을 어떤 원격 저장소에 받을지 정함
 // mavenCenteral을 많이 사용하지만, 라이브러리 업로그 난이도 때문에 jcenter도 많이 사용함
@@ -39,4 +40,5 @@ dependencies {
     implementation('org.springframework.session:spring-session-jdbc')
 
     testImplementation('org.springframework.boot:spring-boot-starter-test')
+    testImplementation('org.springframework.security:spring-security-test')     // 스프링 시큐리티 테스트를 위한 여러 도구를 지원한다.
 }
